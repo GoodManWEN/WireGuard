@@ -1,0 +1,22 @@
+【WG_Server】
+
+[Interface]
+PrivateKey = gAcjUV/nLzyblJNep9coIIcriMGl7nxM42Zm4+gClGU=
+ListenPort = 5567
+Address = 192.168.1.1/8
+
+[Peer]
+PublicKey = Btz14/bJbrukWvsHyZmCvTfG565XnpkEZl59A5CV90E=
+AllowedIPs = 192.168.1.0/8
+
+
+【WG_Client】
+
+[Interface]
+PrivateKey = kHasYz0Fd6/hJpkKsqrSITN3M9bWIqNcy4LLFYmRVHk=
+Address = 192.168.1.101/8
+
+[Peer]
+PublicKey = cabMoWzUDqj6UNQZaiEurfv1ZuiGJRFwABqDmRp9OQI=
+AllowedIPs = 192.168.1.0/8
+Endpoint = 507a.wendemoapi.site:5567
