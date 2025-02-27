@@ -20,3 +20,61 @@ Address = 192.168.1.101/24
 PublicKey = cabMoWzUDqj6UNQZaiEurfv1ZuiGJRFwABqDmRp9OQI=
 AllowedIPs = 192.168.1.0/24
 Endpoint = 507a.wendemoapi.site:5567
+
+【三机互联版本】
+【初号机】
+[Interface]
+PrivateKey = WG3CL/uUQgdKeEQOLYv0cIU5DIkoSuQlLjTYXp8ErFY=
+ListenPort = 12345
+Address = 192.168.1.101/24
+
+[Peer]
+PublicKey = vZI8VurWVTC9XTpqJgdmrhy0VG9m/fbBmLCyuOau2mc=
+AllowedIPs = 192.168.1.102/32 # 注意这里要用32掩码，因为两个机器的网段不能重合，否则流量会被错误路由，导致其中只有一台机器能正确访问
+Endpoint = b.example.com:12345
+PersistentKeepalive = 30
+
+[Peer]
+PublicKey = VakTIaCywY7qwLR+uTgIz1tG/zstjU69V6hlA5szfxs=
+AllowedIPs = 192.168.1.103/32
+Endpoint = c.example.com:12345
+PersistentKeepalive = 30
+
+【二号机】
+[Interface]
+PrivateKey = eJkSKtoVcxJZUNslDOQlHLUVzFnwM5lioqun6Cx5JW4=
+ListenPort = 12345
+Address = 192.168.1.102/24
+
+[Peer]
+PublicKey = Dd0HG4QYKaCla1HQsixYA9dnOAs2auXXFJPRy0/97mk=
+AllowedIPs = 192.168.1.101/32
+Endpoint = a.example.com:12345
+PersistentKeepalive = 30
+
+[Peer]
+PublicKey = VakTIaCywY7qwLR+uTgIz1tG/zstjU69V6hlA5szfxs=
+AllowedIPs = 192.168.1.103/32    
+Endpoint = c.example.com:12345
+PersistentKeepalive = 30
+
+【三号机】
+[Interface]
+PrivateKey = CJbV2HtrQmarqdLMUlKwtd8ovre6QW+qVIGLVFQ8o3U=
+ListenPort = 12345
+Address = 192.168.1.103/24
+
+[Peer]
+PublicKey = Dd0HG4QYKaCla1HQsixYA9dnOAs2auXXFJPRy0/97mk=
+AllowedIPs = 192.168.1.101/32
+Endpoint = a.example.com:12345
+PersistentKeepalive = 30
+
+[Peer]
+PublicKey = vZI8VurWVTC9XTpqJgdmrhy0VG9m/fbBmLCyuOau2mc=
+AllowedIPs = 192.168.1.102/32
+Endpoint = b.example.com:12345
+PersistentKeepalive = 30
+
+
+
